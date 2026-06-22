@@ -44,7 +44,7 @@ export default function Home() {
           <span className="text-[#84BCDA] ml-8">role:</span> <span className="text-[#EFD6AC]">{"'Full Stack Lead Web Dev'"}</span><br />
           <span className="text-[#84BCDA] ml-8">age:</span> <span className="text-[#61D095]">26</span><br />
           <span className="text-[#84BCDA] ml-8">focus:</span> {"["}<span className="text-[#EFD6AC]">{"'Next.js'"}</span>, <span className="text-[#EFD6AC]">{"'PayloadCMS'"}</span>{"]"}<br />
-          <span className="text-[#84BCDA] ml-8">languages:</span> <span className="text-[#EFD6AC]">{"'Kyllian'"}</span><br />
+          <span className="text-[#84BCDA] ml-8">languages:</span> {"["}<span className="text-[#EFD6AC]">{"'Français'"}</span>, <span className="text-[#EFD6AC]">{"'English'"}</span>{"]"}<br />
           <span className="text-[#84BCDA] ml-8">status:</span> <span className="text-[#61D095]">200</span><br />
           {"};"}
         </p>
