@@ -51,72 +51,72 @@ export default function IDEProject({projects}: IDEProjectProps)
     )
 
     return(
-        <div className="w-[1200px] bg-[#27343D] flex flex-col border border-[#47545D] rounded-[40px] p-8 font-sans">
-      <div className="flex justify-between items-center">
-        <div className="flex gap-2">
-          <span className="inline-flex size-[20px] bg-red-500 rounded-full"></span>
-          <span className="inline-flex size-[20px] bg-yellow-500 rounded-full"></span>
-          <span className="inline-flex size-[20px] bg-green-500 rounded-full"></span>
-        </div>
-        <div className="flex gap-1 p-1 rounded-[15px] border border-[#38556B]">
-          <button onClick={() => handleSetMode(true)} className={`p-2 rounded-[10px] w-[120px] ${isPreview ? "bg-linear-to-br from-[#37AF6F] to-[#5C8EA9]" : "hover:bg-[#38556B]"} cursor-pointer`}>Preview</button>
-          <button onClick={() => handleSetMode(false)} className={`p-2 rounded-[10px] w-[120px] ${!isPreview ? "bg-linear-to-br from-[#37AF6F] to-[#5C8EA9]" : "hover:bg-[#38556B]"} cursor-pointer`}>Overview</button>
-        </div>
-        <p className="text-[#AAB8C2]">project.tsx</p>
-      </div>
-      <hr className="my-4 border border-[#47545D]"></hr>
-      <div className="flex h-[600px] gap-4">
-        <div className="min-w-75 h-full bg-[#47545D] rounded-[25px] p-4">
-          <div className="flex justify-between">
-            <p>Explorer</p>
-            <Search />
+      <div className="w-[1200px] bg-[#27343D] flex flex-col border border-[#47545D] rounded-[40px] p-8 font-sans whitespace-pre-wrap">
+        <div className="flex justify-between items-center">
+          <div className="flex gap-2">
+            <span className="inline-flex size-[20px] bg-red-500 rounded-full"></span>
+            <span className="inline-flex size-[20px] bg-yellow-500 rounded-full"></span>
+            <span className="inline-flex size-[20px] bg-green-500 rounded-full"></span>
           </div>
-          <div>
-            {folderIDERender}
+          <div className="flex gap-1 p-1 rounded-[15px] border border-[#38556B]">
+            <button onClick={() => handleSetMode(true)} className={`p-2 rounded-[10px] w-[120px] ${isPreview ? "bg-linear-to-br from-[#37AF6F] to-[#5C8EA9]" : "hover:bg-[#38556B]"} cursor-pointer`}>Preview</button>
+            <button onClick={() => handleSetMode(false)} className={`p-2 rounded-[10px] w-[120px] ${!isPreview ? "bg-linear-to-br from-[#37AF6F] to-[#5C8EA9]" : "hover:bg-[#38556B]"} cursor-pointer`}>Overview</button>
           </div>
+          <p className="text-[#AAB8C2]">project.tsx</p>
         </div>
-        <div className="grow-1 h-full overflow-hidden">
-          {isPreview ? 
-          (
-            <div>
-              <Image
-                src={projectShow.previewUrl}
-                height={2877}
-                width={1920}
-                alt=""
-              />
-            </div>
-          ) : 
-          (<div className="flex flex-col gap-4 p-4">
-            <div>
-              <h2 className="text-xl">Problématique</h2>
-              <p>{projectShow.problem}</p>
+        <hr className="my-4 border border-[#47545D]"></hr>
+        <div className="flex h-[600px] gap-4">
+          <div className="min-w-75 h-full bg-[#47545D] rounded-[25px] p-4">
+            <div className="flex justify-between">
+              <p>Explorer</p>
+              <Search />
             </div>
             <div>
-              <h2 className="text-xl">La solution</h2>
-              <p>{projectShow.solution}</p>
+              {folderIDERender}
             </div>
-            <div>
-              <h2 className="text-xl">Mon rôle</h2>
-              <p>{projectShow.myRole}</p>
-            </div>
-            <div>
-              <h2 className="text-xl">Liens</h2>
-              {projectShow.links.map(
-                (link, index) => {
-                  return(
-                    <a target="_blank" className="underline" key={projectShow.id+ "_link_" + index} href={link.url}>{link.socialName}</a>
-                  )
-                }
-              )} 
-            </div>
-          </div>)
-          }
-          
-          
-        </div>
+          </div>
+          <div className="grow-1 h-full overflow-hidden">
+            {isPreview ? 
+            (
+              <div>
+                <Image
+                  src={projectShow.previewUrl}
+                  height={2877}
+                  width={1920}
+                  alt=""
+                />
+              </div>
+            ) : 
+            (<div className="flex flex-col gap-4 p-4">
+              <div>
+                <h2 className="text-xl font-bold">Problématique</h2>
+                <p className="font-light">{projectShow.problem}</p>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold">La solution</h2>
+                <p className="font-light">{projectShow.solution}</p>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold">Mon rôle</h2>
+                <p className="font-light">{projectShow.myRole}</p>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold">Liens</h2>
+                {projectShow.links.map(
+                  (link, index) => {
+                    return(
+                      <a target="_blank" className="underline" key={projectShow.id+ "_link_" + index} href={link.url}>{link.socialName}</a>
+                    )
+                  }
+                )} 
+              </div>
+            </div>)
+            }
+            
+            
+          </div>
 
+        </div>
       </div>
-    </div>
     )
 }

@@ -13,7 +13,7 @@ export default function Home() {
     <div id="about" className="z-1 flex items-center justify-center font-sans mt-8 gap-32 scroll-mt-28">
       <div className="relative">
         <Image 
-          src={"/pp.jpg"}
+          src={"/pp3.png"}
           width={720}
           height={962}
           alt="Photo de profil"
